@@ -1,0 +1,40 @@
+<div class="col-md-4 offset-4 mt-5 mb-5 card card-body">
+<form action="" [formGroup]="form" (ngSubmit)="loginData(form)">
+    
+    <div class="form-group">
+    <input type="text" name="text" id="text" class="form-control" placeholder="Add Movie" formControlName="text">
+    <div *ngIf = "text.touched && text.invalid">
+        <p *ngIf =  text.errors.required class="text-danger">*this fied is required</p>
+        <p *ngIf =  text.errors.unique class="text-danger">*movie already exists</p>
+    </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="text1" id="text1" class="form-control" placeholder="Movie Title" formControlName="text1" >
+        <div *ngIf = "text1.touched && text1.invalid">
+        <p *ngIf =  text1.errors.required class="text-danger">*this fied is required</p>
+        <p *ngIf =  text1.errors.unique class="text1-danger">*movie already exists</p>
+    </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="text2" id="text2" class="form-control" placeholder="Movie Imgurl"  formControlName="text2">
+        <div *ngIf = "text2.touched && text2.invalid">
+            <p *ngIf =  text2.errors.required class="text-danger">*this fied is required</p>
+            <p *ngIf =  text2.errors.unique class="text1-danger">*movie already exists</p>
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <textarea name="text3" id="text3" cols="55" rows="5" placeholder="Movie description" formControlName="text3"></textarea>
+    
+        
+        <div *ngIf = "text3.touched && text3.invalid">
+            <p *ngIf =  text3.errors.required class="text-danger">*this fied is required</p>
+            <p *ngIf =  text3.errors.unique class="text1-danger">*movie already exists</p>
+        </div>
+    </div>
+    
+    <div class="form-group">
+<button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add</button>
+    </div>
+</form>
+</div>
