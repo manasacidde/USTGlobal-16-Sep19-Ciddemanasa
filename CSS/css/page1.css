@@ -1,0 +1,269 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Open Sans', sans-serif;
+}
+#nav {
+    background:black;
+    text-align: center;
+}
+#nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+#nav ul li a {
+    text-decoration: none;
+     color:white;
+     padding-left: 30px;
+    font-size: 25px;
+}
+
+#index1 {
+    padding-top: 9em;
+    box-shadow: 0px 2px 3px 4px rgb(231, 230, 230);
+    width: 100%;
+    height: 700px;
+}
+.profile_pic {
+    border-radius: 99%;
+    width: 450px;
+}
+.left_content {
+    width: 40%;
+    float: left;
+}
+.right_content {
+    width: 60%;
+    float: right;
+}
+#index1 h1 {
+    font-size: 4em;
+}
+.left_span {
+    font-weight: normal;
+    color:black;
+}
+.right_span {
+    font-weight: 100;
+    color: black;
+}
+.right_content p{
+    font-size: 1.5em;
+    line-height: 1.75em;
+}
+.right_content footer a {
+    background:skyblue;
+    text-decoration: none;
+    color:white;
+    padding: 20px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 10px;
+    margin-top: 40px;
+    border: 1px solid black;
+}
+#index2 {
+    width: 100%;
+    text-align: center;
+    padding-top: 4em;
+    box-shadow: 0px 2px 3px 4px rgb(231, 230, 230);
+    height: 780px;
+}
+#index2 main div header .fa {
+    color: pink;
+    font-size: 60px;
+
+}
+#index2 header h1 {
+    font-size: 1.5em;
+    letter-spacing: -0.015em;
+    color: black;
+    font-weight: 600;
+}
+#index2 header p {
+    font-size: 1.25em;
+    color:grey;
+    letter-spacing: 2px;
+}
+#index2  main div {
+    float: left;
+    width: 300px;
+    margin: 55px 30px;
+    height: 300px;
+    padding: 10px 20px;
+    box-shadow: 2px 2px 2px 2px rgb(211, 208, 208);}
+#index2 div p {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color:grey;
+}
+#index2 footer p {
+    font-size: 2em;
+    letter-spacing: 3px;
+    color:grey;
+}
+#index2 footer a {
+    background:skyblue;
+    text-decoration: none;
+    color:white;
+    padding: 2opx;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 1px solid black;
+}
+#index3 {
+    text-align: center;
+    padding-top: 10em;
+    width: 100%;
+}
+#index3 header h1 {
+    font-size: 2em;
+    letter-spacing: -0.015em;
+    color:black;
+    font-weight: 700;
+}
+#index3 header p {
+    font-size: 1.25em;
+    color:grey;
+    letter-spacing: 2px;
+}
+#index3 main div {
+    float: left;
+    width: 380px;
+    margin: 50px 30px;
+    height: 450px; 
+    box-shadow: 2px 2px 2px 2px rgb(211, 208, 208);
+}
+#index3 main div img {
+    width: 100%;
+}
+#index3 main div p {
+    font-size: 1.25em;
+    letter-spacing: 2px;
+    color:grey;
+}
+#index3 main div a {
+    font-size: 1.5em;
+    letter-spacing: -0.015em;
+    color:black;
+    font-weight: 700;
+    text-decoration: none;
+}
+#index3 footer p {
+    font-size: 1.25em;
+    color:grey;
+    letter-spacing: 2px;
+    padding-top: 2em;
+}
+#index3 footer a {
+    background: #43B3E0;
+    text-decoration: none;
+    color: #fff;
+    padding: 25px 50px;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 1px solid #111;
+}
+#foot {
+    padding: 0;
+    background: #111;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 3em;
+}
+#foot header h1{
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    padding-top: 3em;
+}
+#foot header p {
+    font-size: 1.25em;
+    color:grey;
+    letter-spacing: 2px;
+    padding-top: 1em;
+}
+#foot div input {
+    border: none;
+    background:black;
+    padding: 0.75em;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: text;
+    margin-top: 25px;
+}
+.form1{
+    width: 70%;
+    margin: 30px 15%;
+}
+.name{
+    width: 50%;
+    float: left;
+}
+.name input, .email input{
+    width: 95%;
+    height: 40px;
+}
+.email input {
+    margin-left: 5%;
+}
+.name input{
+    margin-right: 5%;
+}
+.email{
+    width: 50%;
+    float: left;
+}
+.subject, .message{
+    width: 100%;
+}
+.subject input{
+    width: 100%;
+    height: 40px;
+}
+.message input{
+    width: 100%;
+    height: 15em;
+    padding: 0;
+}
+#foot ul li {
+    display: inline-block;
+}
+.sub {
+    background: #43B3E0;
+    color:white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.alt {
+    background: #282828;
+    color:white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#foot .social ul li a .fa{
+    font-size: 30px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    background: #282828;
+    color: black;
+    margin-left: 5px;
+}
+.end {
+    padding-top: 30px;
+    color: #282828;
+}

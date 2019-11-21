@@ -1,0 +1,45 @@
+
+#pix{
+    background-image: url("G:/CSS/images/background.jpg");
+    background-size: cover;
+    height:500px;
+    width:1500px;
+    color:white;
+    
+}
+
+#search{
+    width:40%;
+    height:10%;
+    
+}
+.navbar{
+    text-decoration: none;
+}
+#text{
+    text-align: center;
+    
+}
+#text1{
+    text-align: center;
+}
+a{
+    color:white;
+}
+img{
+    width:10px;
+    height:10px;
+}
+#images{
+    height:1px;
+}
+.wrapper{
+    text-align: center;
+}
+#pic{
+    height:20px;
+}
+.col{
+    height:40px;
+    width:60px;
+}

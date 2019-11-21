@@ -1,0 +1,39 @@
+form{
+    border: 1px solid black;
+    width: 350px;
+    height:400px;
+    padding-left: 20px;
+    margin:100px 0 0 400px;
+    text-align: center;
+    font-size: 20px;
+    font-family: cursive;
+    border-radius: 25px;
+    background-image: url(G:/CSS/images/img5.jpg);
+    color: white;
+}
+body{
+    background-image: url(G:/CSS/images/img4.jpg);
+    background-size: cover;
+}
+input[type="text"],input[type="password"]{    
+    width:250px;
+    height:25px;
+    border:1px solid black;
+    border-radius: 50px;
+    text-align: center;
+}
+input[type="text"],input[type="password"]:focus{
+    outline: none;
+}
+input[type="submit"]{
+    margin-top: 20px;
+    padding:3px 15px;
+    border-radius: 20px;
+    background-color: blue;
+    outline-style: none;
+    color:aliceblue
+    
+}
+input[type="submit"]:hover{
+    background-color: crimson
+}
