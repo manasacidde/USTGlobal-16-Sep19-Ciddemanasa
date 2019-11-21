@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Named function
+        function fact(num1)
+        {
+            var i,fact=1;
+            for(i=1;i<=num1;i++)
+            {
+                fact=fact*i;
+            }
+            console.log('factorial of a number=',fact);
+        }
+        fact(5);
+
+        //Function expression
+        var fact = function(num1)
+        {
+            var i,fact=1;
+            for(i=1;i<=num1;i++)
+            {
+                fact=fact*i;
+            }
+            console.log('factorial of a number=',fact);
+        }
+        fact(5);
+        
+        //Self Invoked Function
+
+        (function(num1)
+        {
+            var i,fact=1;
+            for(i=1;i<=num1;i++)
+            {
+                fact=fact*i;
+            }
+            console.log('factorial of a number=',fact);
+        })(5)
+
+        //Fat ARROW FUNCTION
+        var fact = (num1)=>
+        {
+            var i,fact=1;
+            for(i=1;i<=num1;i++)
+            {
+                fact=fact*i;
+            }
+            console.log('factorial of a number=',fact);
+        }
+        fact(5);
+            
+        </script>
+</body>
+</html>
