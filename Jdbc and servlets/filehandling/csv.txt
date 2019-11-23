@@ -1,0 +1,4 @@
+10,Manasa,10000,F
+11,Navya,20000,F
+12,Srujana,30000,F
+13,Vamsi,40000,M
