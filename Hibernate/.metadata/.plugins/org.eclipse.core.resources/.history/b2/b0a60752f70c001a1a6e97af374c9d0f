@@ -1,0 +1,9 @@
+package com.ustglobal.jpawithhibernate.onetomany;
+
+public class PencilBox {
+	
+	private int bid;
+	
+	private String bname;
+
+}

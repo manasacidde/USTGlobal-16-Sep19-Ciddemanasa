@@ -1,0 +1,10 @@
+package com.ustglobal.jpawithhibernateapp.jpql;
+
+public class InsertDemoJpql {
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.ustglobal.jpawithhibernateapp.jpql;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+
+import com.ustglobal.jpawithhibernateapp.dto.Product;
+
+public class ReadDemo {
+
+	public static void main(String[] args) {
+		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("TestPersistence");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		String jpql = "from Product";
+		Query query = entityManager.createQuery(jpql);
+		Product pr = (Product) query.getResultList();
+		System.out.println("id---"+pr.getId());
+		System.out.println("name--"+pr.getPname());
+		
+		
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package com.ustglobal.jpawithhibernateapp;
+
+import java.util.ArrayList;
+
+import com.ustglobal.jpawithhibernateapp.manytomany.Course;
+import com.ustglobal.jpawithhibernateapp.manytomany.Student;
+
+public class TestManyToMany {
+	public static void main(String[] args) {
+		
+		Course c = new Course();
+		c.setCid(1);
+		c.setCname("java");
+		
+		Course c1 = new Course();
+		c1.setCid(2);
+		c1.setCname("sql");
+		
+		ArrayList<Course> a= new ArrayList<Course>();
+		a.add(c);
+		a.add(c1);
+		
+		Student s = new Student();
+		s.setSid(10);
+		s.setSname("manasa");
+		s.setCourse(a);
+		
+		
+		
+	}
+
+}
