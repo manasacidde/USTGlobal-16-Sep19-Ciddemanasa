@@ -1,0 +1,41 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="loginData(form)">
+        <h1 class="text-center bg-dark text-white">Forma</h1>
+    <div class="form-group">
+        <input type="text" name="text" id="text" class="form-control" placeholder="Company name" #text="ngModel" ngModel required minlength="6">
+    <div *ngIf ="text.touched && text.invalid">
+        <p class="alert alert-danger" *ngIf=text.errors.required >*this field is required</p>
+        <p *ngIf=text.errors.minlength>*minimum length is 6</p>
+    
+    </div>
+    </div>
+    <div class="form-group">
+        <select name="select" id="select" class="form-control">
+            <option value="o" skills disabled>skills</option>
+            <option value="java">Java</option>
+            <option value="sql">sql</option>
+            <option value="angular">angular</option>
+        </select>
+
+    </div>
+          <div class="form-group">
+           <input type="number" name="exp" id="exp" class="form-control" placeholder="year of exp" #number="ngModel" ngModel required>
+           <div *ngIf ="number.touched && number.invalid">
+            <p class="alert alert-danger" *ngIf=number.errors.required >*this field is required</p>
+          </div> 
+    
+    <div class="form-group">
+        <input type="number" class="form-control" placeholder="CTC" name="sal" id="sal" #number="ngModel" ngModel required>
+        <div *ngIf ="number.touched && number.invalid">
+            <p class="alert alert-danger" *ngIf=number.errors.required >*this field is required</p>
+          </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="text" id="text" placeholder="Location" #text="ngModel" ngModel required>
+        <div *ngIf ="text.touched && text.invalid">
+            <p class="alert alert-danger" *ngIf=text.errors.required >*this field is required</p>
+          </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add Requirement</button>
+    1</div>
+    

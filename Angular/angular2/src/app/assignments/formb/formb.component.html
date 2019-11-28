@@ -1,0 +1,38 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="loginData(form)">
+        <h1 class="text-center bg-dark text-white">Formb</h1>
+    <div class="form-group">
+        <input type="text" name="text" id="text" class="form-control" placeholder="Candidate name" #text="ngModel" ngModel required minlength="6">
+    <div *ngIf ="text.touched && text.invalid">
+        <p class="alert alert-danger" *ngIf=text.errors.required >*this field is required</p>
+        <p *ngIf=text.errors.minlength>*minimum length is 6</p>
+    
+    </div>
+    </div>
+    
+          <div class="form-group">
+            <input type="number" name="num" class="form-control" id="num" placeholder="year of experience" #number="ngModel" ngModel required>
+            <div *ngIf ="number.touched &&  number.invalid">
+                <p class="alert alert-danger" *ngIf=number.errors.required >*this field is required</p>
+
+          </div> 
+          <div class="form-group">
+          <p>Skills</p>
+  <input type="radio" name="skills" value="java"> java
+  <input type="radio" name="skills" value="sql"> sql
+  <input type="radio" name="skills" value="angular"> angular 
+          </div>
+
+    
+    <div class="form-group">
+        <input type="number" class="form-control" placeholder="CTC" name="number" id="number" #number="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control" name="number" id="number" placeholder="ECTC" #number="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+            <input type="text" class="form-control" name="text" id="text" placeholder="Ready to relocate">
+        </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add Requirement</button>
+    </div>
+    

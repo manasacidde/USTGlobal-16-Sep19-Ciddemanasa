@@ -1,0 +1,58 @@
+<form action="" class="col-md-4 offset-4 mt-5 card card-body" #form="ngForm" (ngSubmit)="loginData(form)">
+    <h1 class="text-center bg-dark text-white">Formc</h1>
+<div class="form-group">
+    <input type="text" name="text" id="text" class="form-control" placeholder="User name" #text="ngModel" ngModel required minlength="6">
+<div *ngIf ="text.touched && text.invalid">
+    <p class="alert alert-danger" *ngIf=text.errors.required >*this field is required</p>
+    <p *ngIf=text.errors.minlength>*minimum length is 6</p>
+
+</div>
+</div>
+
+      <div class="form-group">
+        <input type="text" name="text" class="form-control" id="text" placeholder="User page" #text="ngModel" ngModel required>
+        <div *ngIf ="text.touched && text.invalid">
+    <p class="alert alert-danger" *ngIf=text.errors.required >*this field is required</p>
+
+      </div> 
+      <div class="form-group">
+      <p>Gender</p>
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+<input type="radio" name="gender" value="other"> Other 
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" class="form-control" placeholder="User Email" #email="ngModel" ngModel required minlength="6">
+    <div *ngIf ="email.touched && email.invalid">
+        <p class="alert alert-danger" *ngIf=email.errors.required >*this field is required</p>
+        <p *ngIf=email.errors.minlength>*minimin length is 6</p>
+    
+    </div>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="num" id="num" placeholder="User contact no" class="form-control" #tel="ngModel" ngModel required minlength="10">
+        <div *ngIf ="tel.touched && tel.invalid">
+            <p class="alert alert-danger" *ngIf=tel.errors.required >*this field is required</p>
+            <p *ngIf=tel.errors.minlength>*minimin length is 10</p>
+        
+        </div>         
+        </div>
+        <div class="form-group">
+<input type="password" name="password" id="password" class="form-control" placeholder="Enter password" #password="ngModel" ngModel required>
+<div *ngIf ="password.touched && password.invalid">
+    <p class="alert alert-danger" *ngIf=password.errors.required>*this field is required</p>
+
+</div>
+</div>
+<div class="form-group">
+    <input type="password" name="password" id="password1" class="form-control" placeholder="Re-enter password" #password="ngModel" ngModel required>
+    <div *ngIf ="password.touched && password.invalid">
+        <p class="alert alert-danger" *ngIf=password.errors.required>*this field is required</p>
+    
+    </div>
+    </div>
+
+
+<div class="form-group">
+    <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Add User</button>
+</div>
