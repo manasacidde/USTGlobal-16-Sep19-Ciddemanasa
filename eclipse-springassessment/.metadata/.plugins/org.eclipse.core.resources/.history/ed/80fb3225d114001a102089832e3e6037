@@ -1,0 +1,12 @@
+package com.ustglobal.retailer.service;
+
+import com.ustglobal.retailer.dto.RetailerBean;
+
+public interface RetailerService {
+	public int createProfile(RetailerBean bean);
+	public RetailerBean login(int id, String password);
+	public RetailerBean search(int id);
+	public boolean update(RetailerBean bean);
+	
+
+}

@@ -1,0 +1,16 @@
+package com.ustglobal.retailer.dto;
+
+public class Product {
+	
+	private int pid;
+	
+	private String pname;
+	
+	private int price;
+	
+	private int quantity;
+	
+	private int amountPayable;
+	
+
+}

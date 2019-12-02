@@ -1,0 +1,63 @@
+<%@page import="com.ustglobal.retailer.dto.RetailerBean"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%
+	RetailerBean bean = (RetailerBean ) session.getAttribute("bean");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="./changepassword">Change Password</a>
+	<a href="./logout" style="float: right;">Logout</a>
+	<h2>
+		Welcome<%=bean.getName()%>
+	</h2> 
+	<fieldset>
+		<legend>Search</legend>
+		<form action="./search">
+			<table>
+				<tr>
+					<td>ID:</td>
+					<td><input type="number" name="id"></td>
+					<td><input type="submit" value="search">
+					
+				</tr>
+
+			</table>
+
+		</form>
+
+	</fieldset>
+	<%
+	RetailerBean  pbean =(RetailerBean )request.getAttribute("bean");
+	%>
+	<%
+	if(pbean!=null){
+		%>
+		<table>
+		<tr>
+		<th>PID</th>
+		<th>PNAME</th>
+		<th>PRICE</th>
+		<th>QUANTITY</th>
+		<th>AMOUNT PAYABLE</th>
+		
+		</tr>
+		<tr>
+		<td><%=pbean.getName() %></td>
+		
+		</tr>
+		
+		</table>
+		<%
+		
+		
+	}
+	%>
+	<h3>${msg}</h3>
+</body>
+</html>

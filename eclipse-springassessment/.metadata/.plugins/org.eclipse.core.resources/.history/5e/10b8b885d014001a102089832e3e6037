@@ -1,0 +1,13 @@
+package com.ustglobal.retailer.dao;
+
+import com.ustglobal.retailer.dto.RetailerBean;
+
+public interface RetailerDAO {
+	
+	public int createProfile(RetailerBean bean);
+	public RetailerBean login(int id, String password);
+	public RetailerBean search(int id);
+	public boolean update(RetailerBean bean);
+	
+
+}

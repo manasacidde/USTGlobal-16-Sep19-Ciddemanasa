@@ -1,0 +1,31 @@
+package com.ustglobal.retailer.dao;
+
+import com.ustglobal.retailer.dto.RetailerBean;
+
+public class RetailerDaoImpl implements RetailerDAO{
+
+	@Override
+	public int createProfile(RetailerBean bean) {
+		
+		return 0;
+	}
+
+	@Override
+	public RetailerBean login(int id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public RetailerBean search(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(RetailerBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

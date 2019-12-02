@@ -1,0 +1,47 @@
+package com.ustglobal.retailer.dao;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
+
+import com.ustglobal.retailer.dto.RetailerBean;
+
+public class RetailerDaoImpl implements RetailerDAO{
+
+	
+	@PersistenceUnit     
+	private EntityManagerFactory factory;
+	@Override
+	public int createProfile(RetailerBean bean) {
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		try {
+		manager.persist(bean);
+		transaction.commit();
+		return bean.getId();
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+
+	@Override
+	public RetailerBean login(int id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public RetailerBean search(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(RetailerBean bean) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}
