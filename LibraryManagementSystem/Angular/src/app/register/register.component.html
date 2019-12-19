@@ -1,0 +1,50 @@
+<form class="col-md-4 offset-4 card card-body mt-5" #form="ngForm" (ngSubmit)="register(form)" method="post">
+    <div class="bg-dark">
+        <h1 class="text text-center text-white">Register</h1>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control mt-4" type="number" name="id" id="id" placeholder="enter id" #id="ngModel" ngModel
+            required>
+        <div *ngIf="id.touched && id.invalid">
+            <p class="text text-danger" *ngIf="id.errors.required">*this field is required</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" name="name" id="name" placeholder="enter name" minlength="5"
+            #name="ngModel" ngModel required>
+        <div *ngIf="name.touched && name.invalid">
+            <p class="text text-danger" *ngIf="name.errors.required">*this field required</p>
+            <p *ngIf="name.errors.minlength" class="text-danger">*This field accepts minimum 5 characters</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        <input class="form-control" type="email" name="email" id="email" placeholder="enter email" minlength="8"
+            #email="ngModel" ngModel required>
+        <div *ngIf="email.touched && email.invalid">
+            <p class="text text-danger" *ngIf="email.errors.required">*this field required</p>
+            <p *ngIf="email.errors.minlength" class="text-danger">*This field accepts minimum 8 characters</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="password" name="password" id="password" placeholder="enter password" minlength="8"
+            class="form-control" #password="ngModel" ngModel required>
+        <div *ngIf="password.touched && password.invalid">
+            <p class="text text-danger" *ngIf="password.errors.required">*this field required</p>
+            <p *ngIf="password.errors.minlength" class="text-danger">*This field accepts minimum 8 characters</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-dark  rounded float-right mt-2" [disabled]="form.invalid">Add
+            Librarian</button>
+    </div>
+</form>

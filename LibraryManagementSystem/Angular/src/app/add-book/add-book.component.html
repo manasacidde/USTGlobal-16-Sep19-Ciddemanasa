@@ -1,0 +1,41 @@
+<form class="col-md-4 offset-4 card card-body mt-5" #addBookForm="ngForm" (ngSubmit)="addBook(addBookForm)"
+    method="post">
+   
+        <h1 class="text text-center text-dark">Add Book</h1>
+    <div class="form-group">
+        <input class="form-control mt-4" type="number" name="bid" id="bid" pattern="[0-100]" placeholder="enter book id" #bid="ngModel"
+            ngModel required>
+        <div *ngIf="bid.touched && bid.invalid">
+            <p class="text text-danger" *ngIf="bid.errors.required">*this field required</p>
+            <!-- <p class="text text-danger" *ngIf="bid.errors.pattern">*this field accept only numbers</p> -->
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="name" name="bname" minlength="5" id="bname" pattern="[A-Za-z]" placeholder="enter  name"
+            #bname="ngModel" ngModel required>
+        <div *ngIf="bname.touched && bname.invalid">
+            <p class="text text-danger" *ngIf="bname.errors.required">*this field required</p>
+            <p *ngIf="bname.errors.minlength" class="text-danger">*This field accepts minimum 5 characters</p>
+            <p class="text text-danger" *ngIf="bname.errors.pattern">*this field accept only characters</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="text" name="author" id="author" minlength="5" placeholder="enter author" pattern="[A-Za-z]" class="form-control"
+            #author="ngModel" ngModel required>
+        <div *ngIf="author.touched && author.invalid">
+            <p class="text text-danger" *ngIf="author.errors.required">*this field required</p>
+            <p *ngIf="author.errors.minlength" class="text-danger">*This field accepts minimum 5 characters</p>
+            <p class="text text-danger" *ngIf="author.errors.pattern">*this field accept only characters</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-outline-dark  rounded float-right mt-2"
+            [disabled]="addBookForm.invalid">Add-Book</button>
+    </div>
+</form>

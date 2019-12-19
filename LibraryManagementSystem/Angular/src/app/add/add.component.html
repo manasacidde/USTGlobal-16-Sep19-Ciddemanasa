@@ -1,0 +1,46 @@
+<form class="col-md-4 offset-4 card card-body mt-5" [formGroup]="form" (ngSubmit)="register(form)" method="post">
+       <h1 class="text text-center text-dark">Add Student</h1>
+    <div class="form-group">
+        <input class="form-control mt-4" type="number" name="id" id="id" pattern="[0-100]" placeholder="enter id" formControlName="id">
+        <div *ngIf="id.touched && id.invalid">
+            <!-- <p *ngIf="id.errors.pattern" class="text-danger">*this field accepts only numbers</p> -->
+             <p class="text text-danger" *ngIf="id.errors.required">*this field is required</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" name="name" id="name" pattern="[A-Za-z]" title="invalid pattern" placeholder="enter name" formControlName="name">
+        <div *ngIf="name.touched && name.invalid">
+            <p class="text text-danger" *ngIf="name.errors.required">*this field is required</p>
+            <p *ngIf="name.errors.minlength" class="text-danger">*this field accepts minimum 5 characters</p>
+            <p *ngIf="name.errors.pattern" class="text-danger">*this field accepts only characters</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="email" name="email" id="email" placeholder="enter email" class="form-control"
+            formControlName="email">
+        <div *ngIf="email.touched && email.invalid">
+            <p class="text text-danger" *ngIf="email.errors.required">*this field is required</p>
+            <p *ngIf="email.errors.minlength" class="text-danger">*this field accepts minimum 5 characters</p>
+            <p *ngIf="email.errors.email" class="text-danger">*email must be valid</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="password" name="password" id="password" placeholder="enter password"  class="form-control"
+            formControlName="password">
+        <div *ngIf="password.touched && password.invalid">
+            <p class="text text-danger" *ngIf="password.errors.required">*this field required</p>
+            <p *ngIf="password.errors.minlength" class="text-danger">*this field accepts minimum 5 characters</p>
+            
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-dark  rounded float-right mt-2" [disabled]="form.invalid">Add
+            Student</button>
+    </div>
+</form>

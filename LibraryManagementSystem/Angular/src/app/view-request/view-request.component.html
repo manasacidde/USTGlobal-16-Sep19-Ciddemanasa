@@ -1,0 +1,25 @@
+<div class="container ">
+  <table class="table table-bordered mt-5 table-hover col-md-6 offset-3 "
+    style="border-style: solid; border-width: 1px;">
+    <thead>
+      <tr class="text-center text-dark">
+        <th>Student ID</th>
+        <th>Book ID</th>
+        <th>Registration ID</th>
+        <th>Accept</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests" class="text-center text-info">
+        <td>{{request.id}}</td>
+        <td>{{request.bid}}</td>
+        <td>{{request.registrationId}}</td>
+      
+        <td><button class="btn btn-success" (click)="accept(request)"><i
+              class="far fa-check-circle"></i></button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,53 @@
+<form class="col-md-4 offset-4 card card-body mt-5" #issueBookForm="ngForm" (ngSubmit)="issue(issueBookForm)">
+
+        <h1 class="text text-center text-dark">Issue Book</h1>
+    
+    <div class="form-group">
+        <input class="form-control mt-4" type="number" name="transactionId" id="transactionId"
+            placeholder="enter transactionId" #transactionId="ngModel" ngModel required>
+        <div *ngIf="transactionId.touched && transactionId.invalid">
+            <p class="text text-danger" *ngIf="transactionId.errors.required">*this field required</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control " type="number" name="registrationId" id="registrationId"
+            placeholder="enter registrationId" #registrationId="ngModel" ngModel required>
+        <div *ngIf="registrationId.touched && registrationId.invalid">
+            <p class="text text-danger" *ngIf="registrationId.errors.required">*this field required</p>
+        </div>
+    </div>
+
+    <!-- <div class="form-group">
+        IssueDate:<input class="form-control" type="Date" name="issueDate" id="issueDate" placeholder="enter issueDate"
+            #issueDate="ngModel" ngModel required>
+        <div *ngIf="issueDate.touched && issueDate.invalid">
+            <p class="text text-danger" *ngIf="issueDate.errors.required">*this field required</p>
+
+        </div>
+    </div> -->
+
+    <div class="form-group">
+        ReturnDate:<input class="form-control" type="Date" min="12-17-2019" max="12-31-2019" name="returnDate" id="returnDate" placeholder="enter returnDate"
+            #returnDate="ngModel" ngModel required>
+        <div *ngIf="returnDate.touched && returnDate.invalid">
+            <p class="text text-danger" *ngIf="returnDate.errors.required">*this field required</p>
+
+        </div>
+    </div>
+
+    <!-- <div class="form-group">
+        <input class="form-control" type="number" name="fine" id="fine" placeholder="enter fine" #fine;="ngModel"
+            ngModel required>
+        <div *ngIf="fine.touched && fine.invalid">
+            <p class="text text-danger" *ngIf="fine.errors.required">*this field required</p>
+
+        </div>
+    </div> -->
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-outline-dark  rounded float-right mt-2"
+            [disabled]="issueBookForm.invalid">Issue-Book</button>
+    </div>
+</form>

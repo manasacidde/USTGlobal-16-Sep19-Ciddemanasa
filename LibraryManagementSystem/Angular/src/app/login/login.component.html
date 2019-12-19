@@ -1,0 +1,30 @@
+<form class="col-md-4 offset-4 card card-body mt-5" #form="ngForm" (ngSubmit)="login(form)" method="post">
+    
+    
+    <h1 class="text text-center text-dark">Login</h1>
+
+
+    <div class="form-group">
+
+        <input class="form-control mt-3" type="number" name="id" id="id"  placeholder="enter id"  #id="ngModel" ngModel
+            required>
+        <div *ngIf="id.touched && id.invalid">
+            <p class="text text-danger" *ngIf="id.errors.required">*this field required</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="password" name="password" id="password" minlength="5" placeholder="enter password"  class="form-control"
+            #password="ngModel" ngModel required>
+        <div *ngIf="password.touched && password.invalid">
+            <p class="text text-danger" *ngIf="password.errors.required">*this field is required</p>
+            <p class="text text-danger" *ngIf="password.errors.minlength">*this field accepts minimum 5 characters</p>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-outline-success float-right" [disabled]="form.invalid">Login</button>
+    </div>
+</form>

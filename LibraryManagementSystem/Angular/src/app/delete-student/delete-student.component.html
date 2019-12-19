@@ -1,0 +1,39 @@
+<form #Student="ngForm" (ngSubmit)="getStudentInfo(Student)" class="col-md-4 offset-4 mt-3" method="GET">
+  <input class="form-control mt-5" type="number" name="id" #id="ngModel" ngModel required placeholder="Enter Student Id ">
+  <div *ngIf="id.invalid && id.touched">
+    <p *ngIf="id.errors.required" class="text-danger">*This field is mandatory</p>
+
+  </div>
+
+  <div class="form-group mt-3">
+    <button type="submit" [disabled]="Student.invalid" class="btn btn-outline-dark  rounded float-right mt-2">GetInfo</button>
+  </div>
+</form>
+<br>
+
+<table class="table table-bordered  col-md-4 offset-4 mt-5" *ngIf="studentData">
+  <thead class="thead-grey">
+    <tr>
+      <th>Student ID</th>
+      <th>Student Name</th>
+      <th>Student Email</th>
+      <th>Student Password</th>
+      <!-- <th>Role</th> -->
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{studentData.id}}</td>
+      <td>{{studentData.name}}</td>
+      <td>{{studentData.email}}</td>
+      <td>{{studentData.password}}</td>
+      <!-- <td>{{studentData.type}}</td> -->
+      <td>
+        <button type="button" (click)="deleteStudent(studentData)"
+          class="btn btn-block btn-danger float-right">Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

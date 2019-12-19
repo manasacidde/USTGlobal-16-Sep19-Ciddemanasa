@@ -1,0 +1,21 @@
+<div class="container ">
+    <table class="table table-bordered mt-2 table-hover mt-5 col-md-6 offset-3">
+        <thead>
+            <tr class="text-center text-dark">
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Book Author</th>
+                <th>Request</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books" class="text-center text-info">
+                <td>{{book.bid}}</td>
+                <td>{{book.bname}}</td>
+                <td>{{book.author}}</td>
+                <td><button type="button" class="btn btn-outline-info " (click)="requestBook(book)">Request
+                        Book</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
