@@ -1,0 +1,40 @@
+<form #form="ngForm" (ngSubmit)="get(form)" class="col-md-4 offset-4 mt-5" method="GET">
+    <div class="text-dark text-align">
+        <h1>Search By Name</h1>
+    </div>
+    <input class="form-control mt-3" type="text" name="name" minlength=5 #name="ngModel" ngModel required placeholder="Enter Product name ">
+    <div *ngIf="name.invalid && name.touched">
+      <p *ngIf="name.errors.required" class="text-danger">*This field is mandatory</p>
+      <p class="text-danger" *ngIf="name.errors.minlength">*This field accepts minimum 5 characters</p>
+  
+    </div>
+  
+    <div class="form-group mt-3">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-outline-dark  rounded float-right mt-2">GetInfo</button>
+    </div>
+  </form>
+  <br>
+  
+  <table class="table table-bordered  col-md-4 offset-4 mt-5" *ngIf="Data">
+    <thead class="thead-grey">
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Category</th>
+        <th>Product Company</th>
+        <th>Product Quantity</th>
+        <th>Product Price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{Data.pid}}</td>
+        <td>{{Data.name}}</td>
+        <td>{{Data.category}}</td>
+        <td>{{Data.company}}</td>
+        <td>{{Data.quantity}}</td>
+        <td>{{Data.price}}</td>
+      </tr>
+    </tbody>
+  </table>

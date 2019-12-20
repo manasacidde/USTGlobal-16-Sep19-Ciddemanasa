@@ -1,0 +1,15 @@
+package com.ustglobal.stockmanagement.dao;
+
+import java.util.List;
+
+import com.ustglobal.stockmanagement.dto.Product;
+
+public interface UserDAO {
+	
+	public boolean addProduct(Product product);
+	public boolean modify(Product product);
+	public List<Product> searchByName(String name);
+	public List<Product> searchByCategory(String category);
+	public List<Product> searchByCompany(String company);
+	public List<Product> getAll();
+}

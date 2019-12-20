@@ -1,0 +1,51 @@
+<form class="col-md-4 offset-4 card card-body mt-5" #addProductForm="ngForm" (ngSubmit)="addProduct(addProductForm)"
+    method="post">
+    <h1 class="text text-center text-dark">Add Product</h1>
+
+    <div class="form-group">
+        <input class="form-control" type="name" name="name" minlength="5" id="bname" pattern="[A-Za-z]"
+            placeholder="enter  name" #name="ngModel" ngModel required>
+        <div *ngIf="name.touched && name.invalid">
+            <p class="text text-danger" *ngIf="name.errors.required">*this field required</p>
+            <p class="text-danger" *ngIf="name.errors.minlength">*This field accepts minimum 5 characters</p>
+            <p class="text text-danger" *ngIf="name.errors.pattern">*this field accept only characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="category" id="category" minlength="5" placeholder="enter category" pattern="[A-Za-z]"
+            class="form-control" #category="ngModel" ngModel required>
+        <div *ngIf="category.touched && category.invalid">
+            <p class="text text-danger" *ngIf="category.errors.required">*this field required</p>
+            <p class="text-danger" *ngIf="category.errors.minlength">*This field accepts minimum 5 characters</p>
+            <p class="text text-danger" *ngIf="category.errors.pattern">*this field accept only characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" name="company" id="company" minlength="5" placeholder="enter company" pattern="[A-Za-z]"
+            class="form-control" #company="ngModel" ngModel required>
+        <div *ngIf="company.touched && company.invalid">
+            <p class="text text-danger" *ngIf="company.errors.required">*this field required</p>
+            <p class="text-danger" *ngIf="company.errors.minlength">*This field accepts minimum 5 characters</p>
+            <p class="text text-danger" *ngIf="company.errors.pattern">*this field accept only characters</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="number" name="quantity" id="quantity" placeholder="enter quantity" pattern="[0-100]"
+            class="form-control" #quantity="ngModel" ngModel required>
+        <div *ngIf="quantity.touched && quantity.invalid">
+            <p class="text text-danger" *ngIf="quantity.errors.required">*this field required</p>
+            <p class="text text-danger" *ngIf="company.errors.pattern">*this field accept only numbers</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="number" name="price" id="price" placeholder="enter price" class="form-control" #price="ngModel"
+            ngModel required>
+        <div *ngIf="price.touched && price.invalid">
+            <p class="text text-danger" *ngIf="price.errors.required">*this field required</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-outline-dark  rounded float-right mt-2">Add-Product</button>
+    </div>
+</form>

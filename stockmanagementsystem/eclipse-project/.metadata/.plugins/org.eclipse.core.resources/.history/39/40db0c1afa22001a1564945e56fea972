@@ -1,0 +1,5 @@
+package com.ustglobal.stockmanagement.config;
+
+public class ORMConfig {
+
+}

@@ -1,0 +1,5 @@
+package com.ustglobal.stockmanagement.dao;
+
+public interface UserDAO {
+
+}

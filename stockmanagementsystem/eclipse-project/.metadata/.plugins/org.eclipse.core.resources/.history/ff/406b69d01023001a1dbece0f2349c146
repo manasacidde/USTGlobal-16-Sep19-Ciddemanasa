@@ -1,0 +1,128 @@
+package com.ustglobal.stockmanagement.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ustglobal.stockmanagement.dto.Product;
+import com.ustglobal.stockmanagement.dto.ProductResponse;
+import com.ustglobal.stockmanagement.service.UserService;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*") 
+public class UserController {
+
+	@Autowired
+	private UserService service;
+	
+	@PostMapping(path="/addproduct" ,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse addProduct(@RequestBody Product product) {
+		ProductResponse response = new ProductResponse();
+		if(service.addProduct(product)) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("added");
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to add");
+		}
+		return response;
+		
+	}
+	
+	@PostMapping(path="/modifyproduct" ,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse modify(@RequestBody Product product) {
+		ProductResponse response = new ProductResponse();
+		if(service.modify(product)) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("modified");
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to modify");
+		}
+		return response;
+		
+	}
+	
+	@GetMapping(path="/getname/{name}" ,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse searchByName(@PathVariable("name") String name) {
+		ProductResponse response = new ProductResponse();
+		List<Product> product = service.searchByName(name);
+		if(product!=null) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("got data");
+			response.setProduct(product);
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to get");
+		}
+		return response;
+		
+	}
+	
+	@GetMapping(path="/getcategory/{category}" ,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse searchByCategory(@PathVariable("category") String category) {
+		ProductResponse response = new ProductResponse();
+		List<Product> product = service.searchByCategory(category);
+		if(product!=null) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("got data");
+			response.setProduct(product);
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to get");
+		}
+		return response;
+		
+	}
+	
+	@GetMapping(path="/getcompany/{company}" ,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse searchByCompany(@PathVariable("company") String company) {
+		ProductResponse response = new ProductResponse();
+		List<Product> product = service.searchByCompany(company);
+		if(product!=null) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("got data");
+			response.setProduct(product);
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to get");
+		}
+		return response;
+		
+	}
+	
+	@GetMapping(path="/getall")
+	public ProductResponse getAll(){
+		ProductResponse response = new ProductResponse();
+		List<Product> product = service.getAll();
+		if(product!=null) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("got data");
+			response.setProduct(product);
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to get");
+		}
+		return response;
+		
+	}
+}

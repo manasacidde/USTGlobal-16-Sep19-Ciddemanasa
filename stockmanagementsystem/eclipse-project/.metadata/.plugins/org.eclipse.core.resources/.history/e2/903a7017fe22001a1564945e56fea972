@@ -1,0 +1,11 @@
+package com.ustglobal.stockmanagement.dao;
+
+import com.ustglobal.stockmanagement.dto.Product;
+
+public interface UserDAO {
+	
+	public boolean addProduct(Product product);
+	
+	
+
+}

@@ -1,0 +1,42 @@
+<form #formcategory="ngForm" (ngSubmit)="get(formcategory)" class="col-md-4 offset-4 mt-5" method="GET">
+    <div class="text-dark text-align">
+        <h1>Search By Category</h1>
+    </div>
+    <input class="form-control mt-3" type="text" name="category" minlength=5 #category="ngModel" ngModel required placeholder="Enter Product category ">
+    <div *ngIf="category.invalid && category.touched">
+      <p *ngIf="category.errors.required" class="text-danger">*This field is mandatory</p>
+      <p class="text-danger" *ngIf="category.errors.minlength">*This field accepts minimum 5 characters</p>
+  
+    </div>
+  
+    <div class="form-group mt-3">
+      <button type="submit" [disabled]="formcategory.invalid" class="btn btn-outline-dark  rounded float-right mt-2">GetInfo</button>
+    </div>
+  </form>
+  <br>
+  
+  <table class="table table-bordered  col-md-4 offset-4 mt-5" *ngIf="Data">
+    <thead class="thead-grey">
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Category</th>
+        <th>Product Company</th>
+        <th>Product Quantity</th>
+        <th>Product Price</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{Data.pid}}</td>
+        <td>{{Data.name}}</td>
+        <td>{{Data.category}}</td>
+        <td>{{Data.company}}</td>
+        <td>{{Data.quantity}}</td>
+        <td>{{Data.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+

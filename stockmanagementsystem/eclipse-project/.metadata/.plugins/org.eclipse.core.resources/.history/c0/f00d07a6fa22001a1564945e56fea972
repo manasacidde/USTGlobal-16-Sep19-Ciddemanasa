@@ -1,0 +1,13 @@
+package com.ustglobal.stockmanagement.dao;
+
+import com.ustglobal.stockmanagement.dto.Product;
+
+public class UserDaoImpl implements UserDAO{
+
+	@Override
+	public boolean addProduct(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

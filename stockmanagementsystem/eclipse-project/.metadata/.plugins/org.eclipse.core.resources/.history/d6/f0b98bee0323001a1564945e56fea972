@@ -1,0 +1,58 @@
+package com.ustglobal.stockmanagement.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceUnit;
+import javax.transaction.Transaction;
+
+import org.springframework.stereotype.Repository;
+
+import com.ustglobal.stockmanagement.dto.Product;
+
+@Repository
+public class UserDaoImpl implements UserDAO{
+	
+
+	@PersistenceUnit
+	private EntityManagerFactory factory;
+
+	@Override
+	public boolean addProduct(Product product) {
+		
+		try {
+			EntityManager manager = factory.createEntityManager();
+			EntityTransaction transaction = manager.getTransaction();
+			transaction.begin();
+			manager.persist(product);
+			transaction.commit();
+			manager.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+
+	@Override
+	public boolean modify(Product product) {
+		try {
+			EntityManager manager = factory.createEntityManager();
+			EntityTransaction transaction = manager.getTransaction();
+			transaction.begin();
+			Product product1 =manager.find(Product.class, product.getPid());
+			product1.setName(product.getName());
+			product1.setCompany(product.getCompany());
+			product1.setCategory(product.getCategory());
+			product1.setPrice(product.getPrice());
+			product1.setQuantity(product.getQuantity());
+			transaction.commit();
+		}catch(Exception e) {
+			System.out.println("exception");
+			
+		}
+		return true;
+	}
+		
+
+}

@@ -1,0 +1,5 @@
+package com.ustglobal.stockmanagement.service;
+
+public interface UserService {
+
+}

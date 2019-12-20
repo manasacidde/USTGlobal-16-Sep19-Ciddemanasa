@@ -1,0 +1,34 @@
+package com.ustglobal.stockmanagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ustglobal.stockmanagement.dto.Product;
+import com.ustglobal.stockmanagement.dto.ProductResponse;
+import com.ustglobal.stockmanagement.service.UserService;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	private UserService service;
+	
+	@PostMapping(path="/addproduct" ,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public ProductResponse addProduct(@RequestBody Product product) {
+		ProductResponse response = new ProductResponse();
+		if(service.addProduct(product)) {
+			response.setStatuscode(201);
+			response.setMessage("success");
+			response.setDescription("added");
+		}else {
+			response.setStatuscode(401);
+			response.setMessage("failure");
+			response.setDescription("failed to add");
+		}
+		return response;
+		
+	}
+}

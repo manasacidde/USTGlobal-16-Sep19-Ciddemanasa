@@ -1,0 +1,28 @@
+<table class=" table table-bordered  table-hover col-md-4 offset-4 mt-5 " style="border-style: solid; border-width: 1px;">
+    <thead>
+        <tr class="text-center text-dark mt-4">
+            <th> ID</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>AddtoCart</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products" class="text-center text-info">
+            <td>{{product.pid}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.company}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td><button class="btn btn-success" (click)="Update(product)">Update</button></td>
+            <td><button class="btn btn-success" (click)="Add(Product)">Add</button></td>
+        </tr>
+    </tbody>
+</table>
+
+

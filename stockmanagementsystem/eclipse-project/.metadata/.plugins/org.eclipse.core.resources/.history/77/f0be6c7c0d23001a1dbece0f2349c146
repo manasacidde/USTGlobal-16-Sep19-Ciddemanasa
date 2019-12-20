@@ -1,0 +1,5 @@
+package com.ustglobal.stockmanagement.controller;
+
+public class HandleException {
+
+}
